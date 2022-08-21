@@ -26,15 +26,15 @@ message CreateEventRequest {
 }
 
 message CreateEventResponse {
-bool is_success = 1;
-string error = 2;
+    bool is_success = 1;
+    string error = 2;
 }
 
 message GetEventsRequest {
-string event_id = 1;
-string aggregate_id = 2;
+    string event_id = 1;
+    string aggregate_id = 2;
 }
 
 message GetEventsResponse {
-repeated Event events = 1;
+    repeated Event events = 1;
 }
