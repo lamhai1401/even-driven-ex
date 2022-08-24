@@ -1,0 +1,43 @@
+version: "3.4"
+services:
+  db:
+    image: samples/postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U alice --password=password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - .:/var/lib/my_data
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: eventstoredb
+  
+  # db2:
+  #   image: samples/postgres
+  #   container_name: postgres2
+  #   ports:
+  #     - "5433:5433"
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U username"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+  #   volumes:
+  #     - .:/var/lib/my_data
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: root
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_DB: ordersdb
