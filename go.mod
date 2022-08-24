@@ -6,6 +6,7 @@ require (
 	contrib.go.opencensus.io/exporter/zipkin v0.1.2
 	github.com/cockroachdb/cockroach-go v2.0.1+incompatible
 	github.com/go-kit/kit v0.12.0
+	github.com/google/uuid v1.1.2
 	github.com/lib/pq v1.10.6
 	github.com/nats-io/nats.go v1.16.0
 	github.com/openzipkin/zipkin-go v0.4.0

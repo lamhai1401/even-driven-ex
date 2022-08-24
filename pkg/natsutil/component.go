@@ -64,3 +64,12 @@ func (c *NATSComponent) Shutdown() error {
 	}
 	return nil
 }
+
+// JetStreamContext returns the returns a JetStreamContext
+// for messaging and stream management.
+func (c *NATSComponent) JetStreamContext(opts ...nats.JSOpt) (nats.JetStreamContext, error) {
+	c.mutex.Lock()
+	defer c.mutex.Unlock()
+	jsContext, err := c.nc.JetStream(opts...)
+	return jsContext, err
+}
