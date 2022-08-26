@@ -7,6 +7,7 @@ require (
 	github.com/cockroachdb/cockroach-go v2.0.1+incompatible
 	github.com/go-kit/kit v0.12.0
 	github.com/google/uuid v1.1.2
+	github.com/gorilla/mux v1.8.0
 	github.com/lib/pq v1.10.6
 	github.com/nats-io/nats.go v1.16.0
 	github.com/openzipkin/zipkin-go v0.4.0
